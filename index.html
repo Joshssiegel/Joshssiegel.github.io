@@ -1,104 +1,272 @@
-<html>
-<body>
-<style type=”text/css”>
-.menutitle{
-cursor:pointer;
-margin-bottom: 5px;
-background-color:#ECECFF;
-color:#000000;
-width:140px;
-padding:2px;
-text-align:center;
-font-weight:bold;
-/*/*/border:1px solid #000000;/* */
-}.submenu{
-margin-bottom: 0.5em;
-}
-</style><script type=”text/javascript”>/***********************************************
-* Switch Menu script- by Martial B of http://getElementById.com/
-* Modified by Dynamic Drive for format & NS4/IE4 compatibility
-* Visit http://www.dynamicdrive.com/ for full source code
-***********************************************/var persistmenu=”yes” //”yes” or “no”. Make sure each SPAN content contains an incrementing ID starting at 1 (id=”sub1″, id=”sub2″, etc)
-var persisttype=”sitewide” //enter “sitewide” for menu to persist across site, “local” for this page onlyif (document.getElementById){ //DynamicDrive.com change
-document.write(‘<style type=”text/css”>n’)
-document.write(‘.submenu{display: none;}n’)
-document.write(‘</style>n’)
-}function SwitchMenu(obj){
-if(document.getElementById){
-var el = document.getElementById(obj);
-var ar = document.getElementById(“masterdiv”).getElementsByTagName(“span”); //DynamicDrive.com change
-if(el.style.display != “block”){ //DynamicDrive.com change
-for (var i=0; i<ar.length; i++){
-if (ar[i].className==”submenu”) //DynamicDrive.com change
-ar[i].style.display = “none”;
-}
-el.style.display = “block”;
-}else{
-el.style.display = “none”;
-}
-}
-}function get_cookie(Name) {
-var search = Name + “=”
-var returnvalue = “”;
-if (document.cookie.length > 0) {
-offset = document.cookie.indexOf(search)
-if (offset != -1) {
-offset += search.length
-end = document.cookie.indexOf(“;”, offset);
-if (end == -1) end = document.cookie.length;
-returnvalue=unescape(document.cookie.substring(offset, end))
-}
-}
-return returnvalue;
-}function onloadfunction(){
-if (persistmenu==”yes”){
-var cookiename=(persisttype==”sitewide”)? “switchmenu” : window.location.pathname
-var cookievalue=get_cookie(cookiename)
-if (cookievalue!=””)
-document.getElementById(cookievalue).style.display=”block”
-}
-}function savemenustate(){
-var inc=1, blockid=””
-while (document.getElementById(“sub”+inc)){
-if (document.getElementById(“sub”+inc).style.display==”block”){
-blockid=”sub”+inc
-break
-}
-inc++
-}
-var cookiename=(persisttype==”sitewide”)? “switchmenu” : window.location.pathname
-var cookievalue=(persisttype==”sitewide”)? blockid+”;path=/” : blockid
-document.cookie=cookiename+”=”+cookievalue
-}if (window.addEventListener)
-window.addEventListener(“load”, onloadfunction, false)
-else if (window.attachEvent)
-window.attachEvent(“onload”, onloadfunction)
-else if (document.getElementById)
-window.onload=onloadfunctionif (persistmenu==”yes” && document.getElementById)
-window.onunload=savemenustate</script>
-<h1>Josh Siegel's webpage</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/tdNB96Go84w" frameborder="0" allowfullscreen></iframe>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eHxu5lTwcBg" frameborder="0" allowfullscreen></iframe>
-<p>Hello (don't curse on the internet) world</p>
-<div id=”masterdiv”><div onclick=”SwitchMenu(‘sub1’)”>Heading 1</div>
-<span id=”sub1″>
-– <a href=”//www.makeuseof.com/service/browser”>Link1</a><br>
-– <a href=”//www.makeuseof.com/service/web_based”>Link2</a><br>
-– <a href=”//www.makeuseof.com/service/how-to”>Link3</a><br>
-– <a href=”//www.makeuseof.com/service/applications”>Link4</a><br>
-after heading 1
-</span><div onclick=”SwitchMenu(‘sub2’)”>Heading 2</div>
-<span id=”sub2″>
-– <a href=”//www.makeuseof.com/tag/author/karl-l-gechlik/”>Link5</a><br>
-– <a href=”//www.makeuseof.com/tag/author/tinsie/”>Link6</a><br>
-– <a href=”//www.makeuseof.com/tag/author/varunkashyap/”>Link7</a><br>
-…and more!
-</span><div onclick=”SwitchMenu(‘sub3’)”>Heading 3</div>
-<span id=”sub3″>
-– <a href=”//www.makeuseof.com/about/”>Link9</a><br>
-– <a href=”//www.makeuseof.com/contact”>Link10</a><br>
-– <a href=”//www.makeuseof.com/archives-2″>Link11</a><br>
-– <a href=”//www.makeuseof.com/disclaimer”>Link12</a><br>
-</span></div>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Creative - Start Bootstrap Theme</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <!-- Plugin CSS -->
+    <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/creative.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead text-center text-white d-flex">
+      <div class="container my-auto">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <h1 class="text-uppercase">
+              <strong>Your Favorite Source of Free Bootstrap Themes</strong>
+            </h1>
+            <hr>
+          </div>
+          <div class="col-lg-8 mx-auto">
+            <p class="text-faded mb-5">Start Bootstrap can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light my-4">
+            <p class="text-faded mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! All of the templates and themes on Start Bootstrap are open source, free to download, and easy to use. No strings attached!</p>
+            <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">At Your Service</h2>
+            <hr class="my-4">
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Sturdy Templates</h3>
+              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Ready to Ship</h3>
+              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Up to Date</h3>
+              <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box mt-5 mx-auto">
+              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Made with Love</h3>
+              <p class="text-muted mb-0">You have to make your websites with love these days!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-0" id="portfolio">
+      <div class="container-fluid p-0">
+        <div class="row no-gutters popup-gallery">
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/1.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/1.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/2.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/2.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/3.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/3.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/4.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/4.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/5.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/5.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="img/portfolio/thumbnails/6.jpg" alt="">
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-dark text-white">
+      <div class="container text-center">
+        <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+        <a class="btn btn-light btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="my-4">
+            <p class="mb-5">Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x mb-3 sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x mb-3 sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/creative.min.js"></script>
+
+  </body>
+
 </html>
