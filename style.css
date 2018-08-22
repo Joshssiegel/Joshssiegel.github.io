@@ -11,6 +11,7 @@ body {
 
 .roundImg {
   border-radius: 50%;
+  width:25%;
 }
 
 /* Center website */
@@ -155,6 +156,11 @@ p{
     display: block;
     text-align: left;
 	background-color: #1E90FF;
+  }
+  .roundImg{
+	  width:50%;
+
+
   }
 }
 
