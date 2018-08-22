@@ -61,6 +61,11 @@ p{
     padding: 10px;
 }
 
+/* Adventure Picture Content */
+.adventureContent {
+    background-color:#FFA500;
+    padding: 10px;
+}
 
 
 
@@ -189,6 +194,10 @@ p{
 .container:hover .middle {
   opacity: 1;
 }
+.w3-myfont {
+  color:white;
 
+  font-family: "Comic Sans MS", cursive, sans-serif;
+}
 
 
