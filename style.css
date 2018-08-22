@@ -70,7 +70,7 @@ p{
   color: blue;
   position: fixed;
   z-index: 999;
-
+  /*height is 53px but if u set it you can't collapse it*/
 
 }
 #navbar a {
