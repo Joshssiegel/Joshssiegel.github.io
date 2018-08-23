@@ -69,7 +69,9 @@ p{
     background-color:#FFA500;
     padding: 10px;
 }
-
+.adventureContent:hover {
+    background-color:#EE7600;
+}
 
 
 #navbar {
