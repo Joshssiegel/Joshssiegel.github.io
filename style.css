@@ -61,7 +61,9 @@ p{
     background-color:#FFFFF0;
     padding: 10px;
 }
-
+.techContent:hover {
+    background-color:#ffff66;
+}
 /* Adventure Picture Content */
 .adventureContent {
     background-color:#FFA500;
